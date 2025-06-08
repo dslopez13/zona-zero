@@ -7,10 +7,12 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { auth, googleProvider, createUserWithEmailAndPassword, signInWithPopup } from '@/lib/firebase';
+import { auth, googleProvider, createUserWithEmailAndPassword, signInWithPopup, updateProfile } from '@/lib/firebase'; // Added updateProfile
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Loader2, Mail, Lock, User, ChromeIcon } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
 
 const formSchema = z.object({
   displayName: z.string().min(2, { message: "Display name must be at least 2 characters." }),
@@ -37,11 +39,11 @@ export function SignupForm() {
     setIsLoading(true);
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, values.email, values.password);
-      // You might want to update the user's profile with displayName here if Firebase setup supports it directly
-      // For example, using updateProfile(userCredential.user, { displayName: values.displayName });
-      // This requires importing `updateProfile` from 'firebase/auth'
+      if (userCredential.user) {
+        await updateProfile(userCredential.user, { displayName: values.displayName });
+      }
       toast({ title: "Signup Successful", description: "Welcome to TacticZone!" });
-      router.push("/dashboard");
+      router.push("/curriculum"); // Redirect to curriculum
     } catch (error: any) {
       console.error("Signup error:", error);
       toast({
@@ -59,7 +61,7 @@ export function SignupForm() {
     try {
       await signInWithPopup(auth, googleProvider);
       toast({ title: "Sign Up Successful", description: "Welcome!" });
-      router.push("/dashboard");
+      router.push("/curriculum"); // Redirect to curriculum
     } catch (error: any) {
       console.error("Google Sign-Up error:", error);
       toast({
@@ -154,7 +156,3 @@ export function SignupForm() {
     </Card>
   );
 }
-
-// Minimal Card component structure for use in SignupForm
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import Link from "next/link";

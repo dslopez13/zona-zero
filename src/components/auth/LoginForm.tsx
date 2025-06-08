@@ -8,9 +8,11 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { auth, googleProvider, signInWithEmailAndPassword, signInWithPopup } from '@/lib/firebase';
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
-import { Loader2, Mail, Lock, ChromeIcon } from "lucide-react"; // Using ChromeIcon as a stand-in for Google
+import { Loader2, Mail, Lock, ChromeIcon } from "lucide-react"; 
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Invalid email address." }),
@@ -20,6 +22,7 @@ const formSchema = z.object({
 export function LoginForm() {
   const { toast } = useToast();
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [isLoading, setIsLoading] = useState(false);
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
 
@@ -36,7 +39,8 @@ export function LoginForm() {
     try {
       await signInWithEmailAndPassword(auth, values.email, values.password);
       toast({ title: "Login Successful", description: "Welcome back!" });
-      router.push("/dashboard");
+      const redirectParam = searchParams.get("redirect");
+      router.push(redirectParam || "/curriculum");
     } catch (error: any) {
       console.error("Login error:", error);
       toast({
@@ -54,7 +58,8 @@ export function LoginForm() {
     try {
       await signInWithPopup(auth, googleProvider);
       toast({ title: "Login Successful", description: "Welcome!" });
-      router.push("/dashboard");
+      // Google Sign-In doesn't easily preserve query params, so redirect to default main page.
+      router.push("/curriculum");
     } catch (error: any) {
       console.error("Google Sign-In error:", error);
       toast({
@@ -122,7 +127,7 @@ export function LoginForm() {
           {isGoogleLoading ? (
             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
           ) : (
-            <ChromeIcon className="mr-2 h-4 w-4" /> // Placeholder for Google icon
+            <ChromeIcon className="mr-2 h-4 w-4" /> 
           )}
           Sign in with Google
         </Button>
@@ -136,7 +141,3 @@ export function LoginForm() {
     </Card>
   );
 }
-
-// Minimal Card component structure for use in LoginForm
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import Link from "next/link";

@@ -1,4 +1,4 @@
-import { Brain, Award, Target, Trophy, Medal, Users, BookOpen, ClipboardCheck, BarChart, ShieldCheck, MessageSquare, Futbol, Basketball, Swords, Puzzle, Gamepad2, Dumbbell, Bike, Activity } from 'lucide-react';
+import { Brain, Award, Target, Trophy, Medal, Users, BookOpen, ClipboardCheck, BarChart, ShieldCheck, MessageSquare, Dribbble, Disc3, Swords, Puzzle, Gamepad2, Dumbbell, Bike, Activity } from 'lucide-react';
 import type { LucideProps } from 'lucide-react';
 
 interface SportIconProps extends LucideProps {
@@ -37,9 +37,9 @@ export function SportIcon({ name, ...props }: SportIconProps) {
       return <MessageSquare {...props} />;
     case 'futbol':
     case 'football':
-      return <Futbol {...props} />;
+      return <Dribbble {...props} />; // Changed from SoccerBall to Dribbble
     case 'basketball':
-      return <Basketball {...props} />;
+      return <Disc3 {...props} />;
     case 'swords':
     case 'offensive tactics':
       return <Swords {...props} />;

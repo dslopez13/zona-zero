@@ -7,7 +7,7 @@ import { auth, signOut as firebaseSignOut } from '@/lib/firebase';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
-import { LogOut, LayoutDashboard, BookOpen, HomeIcon, UserCircle } from 'lucide-react';
+import { LogOut, BookOpen, HomeIcon, UserCircle, School } from 'lucide-react'; // School for curriculum
 
 export function Navbar() {
   const { user } = useAuth();
@@ -16,7 +16,7 @@ export function Navbar() {
   const handleSignOut = async () => {
     try {
       await firebaseSignOut(auth);
-      router.push('/'); // Redirect to home after sign out
+      router.push('/'); // Redirect to root, middleware will handle redirect to /login
     } catch (error) {
       console.error("Error signing out: ", error);
       // Handle error (e.g., show toast)
@@ -35,11 +35,12 @@ export function Navbar() {
   return (
     <nav className="bg-primary text-primary-foreground shadow-md">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-headline font-bold hover:text-accent transition-colors">
+        <Link href={user ? "/curriculum" : "/login"} className="text-2xl font-headline font-bold hover:text-accent transition-colors">
           TacticZone
         </Link>
         <div className="flex items-center space-x-4">
-          <Link href="/" className="hover:text-accent transition-colors flex items-center space-x-1">
+          {/* Home link always points to curriculum, middleware handles auth */}
+          <Link href="/curriculum" className="hover:text-accent transition-colors flex items-center space-x-1">
             <HomeIcon size={18} />
             <span>Home</span>
           </Link>
@@ -47,12 +48,7 @@ export function Navbar() {
             <BookOpen size={18} />
             <span>Curriculum</span>
           </Link>
-          {user && (
-            <Link href="/dashboard" className="hover:text-accent transition-colors flex items-center space-x-1">
-              <LayoutDashboard size={18} />
-              <span>Dashboard</span>
-            </Link>
-          )}
+          {/* Removed Dashboard link, curriculum is the main page */}
           
           {user ? (
             <DropdownMenu>
@@ -74,9 +70,9 @@ export function Navbar() {
                   </div>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={() => router.push('/dashboard')}>
-                  <LayoutDashboard className="mr-2 h-4 w-4" />
-                  <span>Dashboard</span>
+                <DropdownMenuItem onClick={() => router.push('/curriculum')}>
+                  <School className="mr-2 h-4 w-4" /> 
+                  <span>My Learning</span>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={handleSignOut} className="text-red-500 hover:!text-red-500 focus:text-red-500">
