@@ -6,8 +6,8 @@ import { Footer } from '@/components/layout/Footer';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'TacticZone: Game Masters',
-  description: 'Master the game with TacticZone',
+  title: 'Zona Cero: Game Masters',
+  description: 'Master the game with Zona Cero',
 };
 
 export default function RootLayout({

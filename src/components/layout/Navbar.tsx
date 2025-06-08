@@ -36,7 +36,7 @@ export function Navbar() {
     <nav className="bg-primary text-primary-foreground shadow-md">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <Link href={user ? "/curriculum" : "/login"} className="text-2xl font-headline font-bold hover:text-accent transition-colors">
-          TacticZone
+          Zona Cero
         </Link>
         <div className="flex items-center space-x-4">
           {/* Home link always points to curriculum, middleware handles auth */}

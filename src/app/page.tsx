@@ -21,7 +21,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[calc(100vh-200px)] p-4">
       <Loader2 className="h-12 w-12 animate-spin text-primary mb-4" />
-      <p className="text-lg text-muted-foreground">Loading TacticZone...</p>
+      <p className="text-lg text-muted-foreground">Loading Zona Cero...</p>
     </div>
   );
 }

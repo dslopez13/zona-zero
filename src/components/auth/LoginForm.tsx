@@ -76,7 +76,7 @@ export function LoginForm() {
   return (
     <Card className="w-full max-w-md shadow-xl animate-fade-in">
       <CardHeader>
-        <CardTitle className="text-2xl font-headline text-primary">Login to TacticZone</CardTitle>
+        <CardTitle className="text-2xl font-headline text-primary">Login to Zona Cero</CardTitle>
         <CardDescription>Enter your credentials to access your account.</CardDescription>
       </CardHeader>
       <CardContent>

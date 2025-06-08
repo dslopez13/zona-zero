@@ -21,14 +21,14 @@ export function ProgressTracker({ overallProgress }: ProgressTrackerProps) {
   return (
     <Card className="shadow-lg animate-fade-in">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-        <CardTitle className="text-lg font-medium text-primary">Overall Progress</CardTitle>
+        <CardTitle className="text-lg font-medium text-primary">Proceso General</CardTitle>
         <TrendingUp className="h-5 w-5 text-accent" />
       </CardHeader>
       <CardContent>
-        <div className="text-3xl font-bold text-primary">{overallProgress}% Complete</div>
+        <div className="text-3xl font-bold text-primary">{overallProgress}% Completado</div>
         <Progress value={progressValue} className="w-full mt-2 h-3" />
         <p className="text-xs text-muted-foreground mt-1">
-          {overallProgress === 100 ? "Congratulations! You've completed the course." : `Keep up the great work!`}
+          {overallProgress === 100 ? "¡Felicidades! Has completado el curso." : `Sigue esforzándote, vas por buen camino.`}
         </p>
       </CardContent>
     </Card>

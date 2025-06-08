@@ -1,4 +1,4 @@
-# **App Name**: TacticZone: Game Masters
+# **App Name**: Zona Cero: Game Masters
 
 ## Core Features:
 

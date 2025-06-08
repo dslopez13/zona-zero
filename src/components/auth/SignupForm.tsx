@@ -42,7 +42,7 @@ export function SignupForm() {
       if (userCredential.user) {
         await updateProfile(userCredential.user, { displayName: values.displayName });
       }
-      toast({ title: "Signup Successful", description: "Welcome to TacticZone!" });
+      toast({ title: "Signup Successful", description: "Welcome to Zona Cero!" });
       router.push("/curriculum"); // Redirect to curriculum
     } catch (error: any) {
       console.error("Signup error:", error);
@@ -78,7 +78,7 @@ export function SignupForm() {
     <Card className="w-full max-w-md shadow-xl animate-fade-in">
       <CardHeader>
         <CardTitle className="text-2xl font-headline text-primary">Create an Account</CardTitle>
-        <CardDescription>Join TacticZone and start mastering the game.</CardDescription>
+        <CardDescription>Join Zona Cero and start mastering the game.</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>

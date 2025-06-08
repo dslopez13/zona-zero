@@ -14,19 +14,31 @@ import { UserCircle } from "lucide-react";
 const mockStudentData = {
   overallProgress: 75,
   badges: [
-    { id: 'b1', name: 'Strategy Starter', iconType: 'brain', description: 'Completed Unit 1: Foundations of Strategy.', achievedDate: '2024-07-10' },
-    { id: 'b2', name: 'Offensive Ace', iconType: 'swords', description: 'Excelled in Unit 2: Offensive Tactics.', achievedDate: '2024-07-20' },
-    { id: 'b3', name: 'Top Defender', iconType: 'shieldcheck', description: 'Mastered Unit 3: Defensive Maneuvers.', achievedDate: '2024-08-01' },
+    { id: 'b1', name: 'Iniciador Estratégico', iconType: 'brain', description: 'Completó la Unidad 1: Fundamentos de Estrategia.', achievedDate: '2024-07-10' },
+    { id: 'b2', name: 'As Ofensivo', iconType: 'swords', description: 'Destacó en la Unidad 2: Tácticas Ofensivas.', achievedDate: '2024-07-20' },
+    { id: 'b3', name: 'Defensor Elite', iconType: 'shieldcheck', description: 'Dominó la Unidad 3: Maniobras Defensivas.', achievedDate: '2024-08-01' },
   ] as Badge[],
   grades: [
-    { id: 'g1', unit: 'Foundations of Strategy', score: 'A', status: 'Completed' },
-    { id: 'g2', unit: 'Offensive Tactics', score: 'A-', status: 'Completed' },
-    { id: 'g3', unit: 'Defensive Maneuvers', score: 'B+', status: 'Completed' },
-    { id: 'g4', unit: 'Psychological Warfare', score: 'In Progress', status: 'In Progress' },
+    { id: 'g1', unit: 'Fundamentos de Estrategia', score: 'A', status: 'Completado' },
+    { id: 'g2', unit: 'Tácticas Ofensivas', score: 'A-', status: 'Completado' },
+    { id: 'g3', unit: 'Maniobras Defensivas', score: 'B+', status: 'Completado' },
+    { id: 'g4', unit: 'Guerra Psicológica', score: 'En proceso', status: 'En proceso' },
   ] as Grade[],
   tutorComments: [
-    { id: 'c1', date: '2024-08-01', text: 'Excellent work on the defensive scenarios! Your understanding of resource management is top-notch.', tutorName: 'Coach Alpha', tutorAvatarUrl: 'https://placehold.co/40x40.png' },
-    { id: 'c2', date: '2024-07-21', text: 'Great tactical plan for the offensive simulation. Consider exploring more diverse opening gambits.', tutorName: 'Master Strategist Beta', tutorAvatarUrl: 'https://placehold.co/40x40.png' },
+    {
+      id: 'c1',
+      date: '2024-08-01',
+      text: '¡Excelente trabajo en los escenarios defensivos! Tu comprensión de la gestión de recursos es sobresaliente.',
+      tutorName: 'Entrenador Alpha',
+      tutorAvatarUrl: 'https://placehold.co/40x40.png',
+    },
+    {
+      id: 'c2',
+      date: '2024-07-21',
+      text: 'Gran plan táctico en la simulación ofensiva. Considera explorar aperturas más variadas.',
+      tutorName: 'Estratega Maestro Beta',
+      tutorAvatarUrl: 'https://placehold.co/40x40.png',
+    },
   ] as Comment[],
 };
 
@@ -62,9 +74,9 @@ export default function DashboardPage() {
            <UserCircle className="h-12 w-12 text-primary" />
            <div>
             <h1 className="text-3xl font-headline font-bold text-primary">
-              Welcome, {user.displayName || user.email}!
+              Bienvenido, {user.displayName || user.email}!
             </h1>
-            <p className="text-md text-muted-foreground">Here's your TacticZone journey overview.</p>
+            <p className="text-md text-muted-foreground">Aquí tienes un resumen de tu recorrido en Zona Cero.</p>
            </div>
         </div>
       </section>

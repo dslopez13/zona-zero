@@ -15,7 +15,7 @@ export interface Grade {
   id: string;
   unit: string;
   score: string; // Could be 'A+', '85%', 'Pass'
-  status: 'Completed' | 'In Progress' | 'Not Started';
+  status: 'Completado' | 'En proceso' | 'No Iniciado';
   feedbackUrl?: string; // Optional link to detailed feedback
 }
 
@@ -26,9 +26,9 @@ interface GradesTableProps {
 export function GradesTable({ grades }: GradesTableProps) {
   const getStatusVariant = (status: Grade['status']): "default" | "secondary" | "outline" | "destructive" => {
     switch (status) {
-      case 'Completed': return 'default'; // primary color by default
-      case 'In Progress': return 'secondary'; // accent color
-      case 'Not Started': return 'outline';
+      case 'Completado': return 'default'; // primary color by default
+      case 'En proceso': return 'secondary'; // accent color
+      case 'No Iniciado': return 'outline';
       default: return 'outline';
     }
   };
@@ -69,7 +69,7 @@ export function GradesTable({ grades }: GradesTableProps) {
                 <TableCell className="font-medium">{grade.unit}</TableCell>
                 <TableCell className={`text-center font-semibold ${getScoreColor(grade.score)}`}>{grade.score}</TableCell>
                 <TableCell className="text-center">
-                  <Badge variant={getStatusVariant(grade.status)} className={grade.status === 'In Progress' ? 'bg-accent text-accent-foreground hover:bg-accent/90' : ''}>
+                  <Badge variant={getStatusVariant(grade.status)} className={grade.status === 'En proceso' ? 'bg-accent text-accent-foreground hover:bg-accent/90' : ''}>
                     {grade.status}
                   </Badge>
                 </TableCell>
