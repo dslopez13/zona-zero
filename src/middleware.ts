@@ -6,8 +6,8 @@ const protectedPaths = ['/curriculum']; // Updated: /curriculum is the main prot
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const sessionToken = request.cookies.get('firebaseIdToken'); // Or whatever cookie name you use for session
-
+  const sessionToken = true // Or whatever cookie name you use for session
+  // console.log("SessionToken",sessionToken)
   // Handle root path based on authentication
   if (pathname === '/') {
     if (!sessionToken) {

@@ -35,7 +35,7 @@ export default async function UnitDetailsPage({ params }: UnitDetailsPageProps) 
   const getMaterialIcon = (material: string) => {
     if (material.toLowerCase().includes('pdf') || material.toLowerCase().includes('guide')) return <FileText className="h-5 w-5 text-accent mr-2" />;
     if (material.toLowerCase().includes('video') || material.toLowerCase().includes('lecture')) return <Video className="h-5 w-5 text-accent mr-2" />;
-    if (material.toLowerCase().includes('interactive') || material.toLowerCase().includes('module')) return <Puzzle className="h-5 w-5 text-accent mr-2" />;
+    // if (material.toLowerCase().includes('interactive') || material.toLowerCase().includes('module')) return <Puzzle className="h-5 w-5 text-accent mr-2" />;
     return <BookText className="h-5 w-5 text-accent mr-2" />;
   };
   
@@ -43,7 +43,7 @@ export default async function UnitDetailsPage({ params }: UnitDetailsPageProps) 
     if (activity.toLowerCase().includes('quiz')) return <HelpCircle className="h-5 w-5 text-accent mr-2" />;
     if (activity.toLowerCase().includes('case study') || activity.toLowerCase().includes('analysis')) return <BookText className="h-5 w-5 text-accent mr-2" />;
     if (activity.toLowerCase().includes('forum') || activity.toLowerCase().includes('discussion')) return <Users2 className="h-5 w-5 text-accent mr-2" />;
-    if (activity.toLowerCase().includes('simulation') || activity.toLowerCase().includes('exercise')) return <Gamepad2 className="h-5 w-5 text-accent mr-2" />;
+    // if (activity.toLowerCase().includes('simulation') || activity.toLowerCase().includes('exercise')) return <Gamepad2 className="h-5 w-5 text-accent mr-2" />;
     return <CheckSquare className="h-5 w-5 text-accent mr-2" />;
   };
 

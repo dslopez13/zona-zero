@@ -40,7 +40,7 @@ export function Navbar() {
         </Link>
         <div className="flex items-center space-x-4">
           {/* Home link always points to curriculum, middleware handles auth */}
-          <Link href="/curriculum" className="hover:text-accent transition-colors flex items-center space-x-1">
+          <Link href="/dashboard" className="hover:text-accent transition-colors flex items-center space-x-1">
             <HomeIcon size={18} />
             <span>Home</span>
           </Link>

@@ -13,6 +13,7 @@ import { useState } from "react";
 import { Loader2, Mail, Lock, ChromeIcon } from "lucide-react"; 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
+import { getIdToken } from "firebase/auth";
 
 const formSchema = z.object({
   email: z.string().email({ message: "Invalid email address." }),
@@ -37,8 +38,8 @@ export function LoginForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
     try {
-      await signInWithEmailAndPassword(auth, values.email, values.password);
-      toast({ title: "Login Successful", description: "Welcome back!" });
+      const userCredential = await signInWithEmailAndPassword(auth, values.email, values.password);
+      toast({ title: "Login Successful", description: "Welcome back! " });
       const redirectParam = searchParams.get("redirect");
       router.push(redirectParam || "/curriculum");
     } catch (error: any) {
