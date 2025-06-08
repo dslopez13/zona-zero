@@ -22,13 +22,13 @@ export function BadgesDisplay({ badges }: BadgesDisplayProps) {
       <CardHeader>
         <CardTitle className="text-lg font-medium text-primary flex items-center">
           <ShieldCheck className="h-5 w-5 text-accent mr-2" />
-          Your Badges
+          Tus Badges
         </CardTitle>
-        <CardDescription>Recognitions for your achievements.</CardDescription>
+        <CardDescription>Reconocimientos por tus logros.</CardDescription>
       </CardHeader>
       <CardContent>
         {badges.length === 0 ? (
-          <p className="text-muted-foreground">No badges earned yet. Keep learning!</p>
+          <p className="text-muted-foreground">Aún no has conseguido ninguna insignia. ¡Sigue aprendiendo!</p>
         ) : (
           <TooltipProvider>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">

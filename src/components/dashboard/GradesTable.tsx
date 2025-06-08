@@ -46,20 +46,20 @@ export function GradesTable({ grades }: GradesTableProps) {
       <CardHeader>
         <CardTitle className="text-lg font-medium text-primary flex items-center">
           <ClipboardCheck className="h-5 w-5 text-accent mr-2" />
-          Grades & Performance
+          Modulos & Calificaciones
         </CardTitle>
-        <CardDescription>Overview of your scores and module status.</CardDescription>
+        <CardDescription>Descripción general de sus calificaciones y estado del módulo.</CardDescription>
       </CardHeader>
       <CardContent>
         {grades.length === 0 ? (
-           <p className="text-muted-foreground">No grades available yet.</p>
+           <p className="text-muted-foreground">No hay modulos disponibles aún</p>
         ) : (
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead className="font-semibold text-primary">Unit</TableHead>
-              <TableHead className="text-center font-semibold text-primary">Score</TableHead>
-              <TableHead className="text-center font-semibold text-primary">Status</TableHead>
+              <TableHead className="font-semibold text-primary">Unidad</TableHead>
+              <TableHead className="text-center font-semibold text-primary">Calificación</TableHead>
+              <TableHead className="text-center font-semibold text-primary">Estado</TableHead>
               {/* <TableHead className="text-right font-semibold text-primary">Feedback</TableHead> */}
             </TableRow>
           </TableHeader>

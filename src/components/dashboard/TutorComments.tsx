@@ -31,11 +31,11 @@ export function TutorComments({ comments }: TutorCommentsProps) {
           <MessageSquare className="h-5 w-5 text-accent mr-2" />
           Tutor Feedback
         </CardTitle>
-        <CardDescription>Latest comments and guidance from your tutors.</CardDescription>
+        <CardDescription>Últimos comentarios y orientaciones de tus tutores.</CardDescription>
       </CardHeader>
       <CardContent>
         {comments.length === 0 ? (
-          <p className="text-muted-foreground">No comments from tutors yet.</p>
+          <p className="text-muted-foreground">No hay comentarios de sus tutores aún.</p>
         ) : (
           <div className="space-y-4">
             {comments.map((comment) => (
