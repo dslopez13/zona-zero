@@ -12,6 +12,17 @@ const curriculumData: Unit[] = [
   { id: 'unit-6', title: 'Team Synergy & Leadership', iconType: 'users', summary: 'Learn to lead and collaborate effectively in team-based games.', materials: ['Guide: Building Team Cohesion', 'Interviews: Successful Team Captains', 'Communication Protocols'], activities: ['Team-Building Exercises (Online)', 'Leadership Simulation', 'Case Study: Championship Teams'] },
 ];
 
+export async function generateStaticParams() {
+  return [
+    { unitId: 'unit-1' },
+    { unitId: 'unit-2' },
+    { unitId: 'unit-3' },
+    { unitId: 'unit-4' },
+    { unitId: 'unit-5' },
+    { unitId: 'unit-6' },
+  ];
+}
+
 export default function CurriculumPage() {
   // Basic search functionality would require client component and state
   // For a server component, this is a static display
@@ -39,3 +50,4 @@ export default function CurriculumPage() {
     </div>
   );
 }
+

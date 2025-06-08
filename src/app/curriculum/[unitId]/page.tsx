@@ -115,8 +115,8 @@ export default async function UnitDetailsPage({ params }: UnitDetailsPageProps) 
 }
 
 // Generate static paths for curriculum units if desired (optional)
-// export async function generateStaticParams() {
-//   return curriculumData.map(unit => ({
-//     unitId: unit.id,
-//   }));
-// }
+export async function generateStaticParams() {
+  return curriculumData.map(unit => ({
+    unitId: unit.id,
+  }));
+}
