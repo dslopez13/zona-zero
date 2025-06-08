@@ -77,8 +77,8 @@ export function SignupForm() {
   return (
     <Card className="w-full max-w-md shadow-xl animate-fade-in">
       <CardHeader>
-        <CardTitle className="text-2xl font-headline text-primary">Create an Account</CardTitle>
-        <CardDescription>Join Zona Cero and start mastering the game.</CardDescription>
+        <CardTitle className="text-2xl font-headline text-primary">Crear una cuenta</CardTitle>
+        <CardDescription>Unete a Zona Cero and empieza a ser un maestro del juego.</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -88,7 +88,7 @@ export function SignupForm() {
               name="displayName"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="flex items-center"><User size={16} className="mr-2 text-primary"/>Display Name</FormLabel>
+                  <FormLabel className="flex items-center"><User size={16} className="mr-2 text-primary"/>Tu Nombre</FormLabel>
                   <FormControl>
                     <Input placeholder="Your Name" {...field} />
                   </FormControl>
@@ -124,11 +124,11 @@ export function SignupForm() {
             />
             <Button type="submit" className="w-full bg-primary hover:bg-primary/90" disabled={isLoading || isGoogleLoading}>
               {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-              Sign Up
+              Registrarte
             </Button>
           </form>
         </Form>
-        <div className="mt-6 relative">
+        {/* <div className="mt-6 relative">
           <div className="absolute inset-0 flex items-center">
             <span className="w-full border-t" />
           </div>
@@ -145,11 +145,11 @@ export function SignupForm() {
             <ChromeIcon className="mr-2 h-4 w-4" />
           )}
           Sign up with Google
-        </Button>
+        </Button> */}
         <p className="mt-6 text-center text-sm text-muted-foreground">
-          Already have an account?{" "}
+          ¿Ya tienes una cuenta?{" "}
           <Link href="/login" className="font-medium text-primary hover:underline">
-            Log in
+            Ingresar
           </Link>
         </p>
       </CardContent>

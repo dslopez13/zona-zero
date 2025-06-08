@@ -76,8 +76,8 @@ export function LoginForm() {
   return (
     <Card className="w-full max-w-md shadow-xl animate-fade-in">
       <CardHeader>
-        <CardTitle className="text-2xl font-headline text-primary">Login to Zona Cero</CardTitle>
-        <CardDescription>Enter your credentials to access your account.</CardDescription>
+        <CardTitle className="text-2xl font-headline text-primary">Login a Zona Cero</CardTitle>
+        <CardDescription>Ingresa tus credenciales para acceder a tu cuenta.</CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -114,7 +114,7 @@ export function LoginForm() {
             </Button>
           </form>
         </Form>
-        <div className="mt-6 relative">
+        {/* <div className="mt-6 relative">
           <div className="absolute inset-0 flex items-center">
             <span className="w-full border-t" />
           </div>
@@ -131,11 +131,11 @@ export function LoginForm() {
             <ChromeIcon className="mr-2 h-4 w-4" /> 
           )}
           Sign in with Google
-        </Button>
+        </Button> */}
         <p className="mt-6 text-center text-sm text-muted-foreground">
-          Don't have an account?{" "}
+          ¿Aún no tienes una cuenta?{" "}
           <Link href="/signup" className="font-medium text-primary hover:underline">
-            Sign up
+            Registrate aquí
           </Link>
         </p>
       </CardContent>

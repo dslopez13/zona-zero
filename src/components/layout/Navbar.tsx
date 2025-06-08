@@ -72,7 +72,7 @@ export function Navbar() {
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={() => router.push('/curriculum')}>
                   <School className="mr-2 h-4 w-4" /> 
-                  <span>My Learning</span>
+                  <span>Mi Dashboard</span>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={handleSignOut} className="text-red-500 hover:!text-red-500 focus:text-red-500">
@@ -84,7 +84,7 @@ export function Navbar() {
           ) : (
             <div className="space-x-2">
               <Button variant="secondary" onClick={() => router.push('/login')} className="bg-accent hover:bg-accent/90 text-accent-foreground">Login</Button>
-              <Button variant="outline" onClick={() => router.push('/signup')} className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">Sign Up</Button>
+              <Button variant="outline" onClick={() => router.push('/signup')} className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">Registro</Button>
             </div>
           )}
         </div>
